@@ -1,0 +1,38 @@
+创建django项目：
+1、mkdir 新建一个文件 Django
+
+2、cd 进入文件Django
+
+3、django-admin startproject 工程名 	#创建一个django工程
+
+4、cd 工程名 	#进入创建好的django工程
+
+5、python ./manage.py runserver 	#启动工程
+
+
+有一个链接，点进去会显示一个空白页，Django自带的页面
+
+
+
+python操作django：
+导入一个django工程，出现manage.py则环境正确
+去settings里面配置一个虚拟环境：
+	Project:工程名字
+		Python lnterpreter
+	show all	
+	Virtualenv Envronment 勾选lnherit global site-packages
+	ok
+虚拟环境创建成功。
+
+控制台输入：python manage.py startapp App(新目录名) 	# 创建一个新目录App
+工程名目录 > urls.py 	
+	urlpatterns = [ path（'index/',views.index）] 	# 两个参数，1、匹配规则，2、视图函数
+App > migrations > views.py
+	def index( request ):	
+		return HttpResponse("页面显示的内容!")
+	此时需要导入一个包 django.http Httpresponse 
+python manage.py runserver 		# 运行该工程
+
+数据迁移： python manage.py migrate
+生成迁移文件：python manage.py makemigrations
+
